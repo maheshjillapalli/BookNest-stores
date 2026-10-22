@@ -110,7 +110,24 @@ function renderBooks(){
 function scrollToBooks(){document.getElementById("books").scrollIntoView({behavior:"smooth"});}
 function openModal(title,body){document.getElementById("modalTitle").textContent=title;document.getElementById("modalBody").innerHTML=body;document.getElementById("modal").classList.add("show");}
 function closeModal(){document.getElementById("modal").classList.remove("show");}
-function previewBook(id){const b=books.find(x=>x.id===id);openModal(b.title,`<p><strong>By ${b.author}</strong> · ${b.category}</p><div class="sample">${b.sample}</div><p><strong>Sample preview only.</strong> Replace this with a preview from your completed original eBook.</p><button class="primary" onclick="closeModal();addToBasket('${b.id}')">Add to basket — ₹${b.price}</button>`);}
+
+function previewBook(id) {
+  const b = books.find(x => x.id === id);
+
+  openModal(
+    b.title,
+    `<p><strong>By ${b.author}</strong> · ${b.category}</p>
+     <div class="sample">${b.sample}</div>
+     <p>Read the sample PDF below.</p>
+     <a href="./BookNest_Sample_Ebook_Python_Basics.pdf"
+        target="_blank"
+        rel="noopener"
+        style="display:inline-block;padding:12px 16px;background:#2f6fed;color:white;border-radius:10px;text-decoration:none;font-weight:bold">
+        Read Sample PDF
+     </a>`
+  );
+}
+
 function addToBasket(id){if(!basket.includes(id))basket.push(id);document.getElementById("cartCount").textContent=basket.length;openCart();}
 function openCart(){if(!basket.length){openModal("Your basket",'<p>Your basket is empty. Explore the library and add a book you like.</p><button class="primary" onclick="closeModal();scrollToBooks()">Explore books</button>');return;}
  const chosen=books.filter(b=>basket.includes(b.id));const total=chosen.reduce((s,b)=>s+b.price,0);
