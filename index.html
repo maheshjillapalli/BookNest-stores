@@ -51,11 +51,54 @@ header{background:rgba(255,255,255,.96);border-bottom:1px solid var(--line);posi
   <div class="dialog"><div class="dialog-top"><h2 id="modalTitle">Book details</h2><button class="close" onclick="closeModal()" aria-label="Close">×</button></div><div id="modalBody"></div></div>
 </div>
 <script>
+
 const books = [
- {id:"python",title:"Python Made Easy",author:"BookNest Studio",category:"Programming",price:99,cls:"cover-python",cover:"Python<br>Made Easy",description:"A beginner-friendly guide to Python fundamentals, with clear explanations and small practice exercises.",sample:"Welcome to Python Made Easy. This guide is designed to help you learn one concept at a time. Start with variables: a variable is a name that refers to a value. Example: name = 'Maya'. Next, practise printing a message and changing the value. The complete edition should include original lessons, tested examples, exercises, and answers."},
- {id:"interview",title:"Computer Science Interview Prep",author:"BookNest Studio",category:"Career",price:149,cls:"cover-interview",cover:"Interview<br>Ready",description:"A structured revision guide for programming basics, DBMS, operating systems, and interview practice.",sample:"A good technical interview answer is clear, structured, and supported by an example. For each topic in your finished guide, include a short definition, why it matters, a practical example, and a common follow-up question. Verify every technical answer before publishing."},
- {id:"study",title:"Study Smarter",author:"BookNest Studio",category:"Student Skills",price:79,cls:"cover-study",cover:"Study<br>Smarter",description:"A practical student guide to planning, revision, focus, and building consistent study habits.",sample:"Begin by choosing one realistic outcome for each study session. Break a large task into small steps, schedule short review sessions, and test your understanding without looking at your notes. Adapt the plan to your own course and deadlines."}
+  {
+    id: "my-first-ebook",
+    title: "My First Original eBook",
+    author: "BookNest",
+    category: "Original eBook",
+    price: 99,
+    cls: "cover-python",
+    cover: "My First<br>eBook",
+    description: "Discover my first original digital book from BookNest. Preview the sample before buying.",
+    sample: "Welcome to my first original eBook! This is a sample preview. The complete book will be available to verified purchasers."
+  },
+  {
+    id: "python",
+    title: "Python Made Easy",
+    author: "BookNest Studio",
+    category: "Programming",
+    price: 99,
+    cls: "cover-python",
+    cover: "Python<br>Made Easy",
+    description: "A beginner-friendly introduction to Python programming.",
+    sample: "Welcome to Python Made Easy. Learn variables, loops, functions, and programming fundamentals."
+  },
+  {
+    id: "interview",
+    title: "Computer Science Interview Prep",
+    author: "BookNest Studio",
+    category: "Career",
+    price: 149,
+    cls: "cover-interview",
+    cover: "Interview<br>Ready",
+    description: "A revision guide for programming, DBMS, and operating systems.",
+    sample: "Prepare for technical interviews with structured explanations and practice questions."
+  },
+  {
+    id: "study",
+    title: "Study Smarter",
+    author: "BookNest Studio",
+    category: "Student Skills",
+    price: 79,
+    cls: "cover-study",
+    cover: "Study<br>Smarter",
+    description: "A practical guide to planning, revision, and better study habits.",
+    sample: "Break large tasks into smaller steps and review your learning regularly."
+  }
 ];
+
 let basket = [];
 function renderBooks(){
  const q=(document.getElementById("searchInput").value||"").toLowerCase().trim();
