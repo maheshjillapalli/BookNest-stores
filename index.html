@@ -1,0 +1,81 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="theme-color" content="#102a56">
+<title>BookNest — Discover your next read</title>
+<style>
+:root{--navy:#102a56;--blue:#2f6fed;--ink:#152238;--muted:#66758c;--bg:#f5f8fd;--line:#e4eaf3;--white:#fff;--shadow:0 12px 35px rgba(16,42,86,.08)}
+*{box-sizing:border-box}body{margin:0;font-family:Inter,ui-sans-serif,system-ui,-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif;background:var(--bg);color:var(--ink)}button,input{font:inherit}button{cursor:pointer}.wrap{width:min(1120px,92%);margin:auto}
+header{background:rgba(255,255,255,.96);border-bottom:1px solid var(--line);position:sticky;top:0;z-index:5}
+.nav{min-height:70px;display:flex;align-items:center;justify-content:space-between;gap:14px}.brand{display:flex;align-items:center;gap:10px;color:var(--navy);font-weight:850;font-size:1.25rem;letter-spacing:-.04em}.logo{width:36px;height:36px;background:var(--navy);color:#fff;border-radius:12px;display:grid;place-items:center;font-size:19px}.navright{display:flex;align-items:center;gap:10px}.navlink{border:0;background:transparent;color:var(--navy);font-weight:700;padding:10px}.cartbtn,.primary{border:0;background:var(--blue);color:#fff;border-radius:12px;padding:11px 15px;font-weight:750}.cartbtn{background:#eaf1ff;color:var(--navy)}.hero{padding:52px 0 35px;background:linear-gradient(125deg,#edf4ff,#fff 60%,#eaf1ff)}.hero-grid{display:grid;grid-template-columns:1.15fr .85fr;gap:30px;align-items:center}.eyebrow{display:inline-flex;align-items:center;gap:8px;border:1px solid #d8e5ff;background:#fff;color:#2457b9;border-radius:999px;padding:7px 11px;font-size:.8rem;font-weight:800}.hero h1{font-size:clamp(2.35rem,6vw,4.2rem);line-height:1.04;letter-spacing:-.065em;color:var(--navy);margin:18px 0}.hero h1 span{color:var(--blue)}.hero p{color:var(--muted);line-height:1.7;max-width:520px}.search{display:flex;gap:8px;margin-top:22px;background:#fff;border:1px solid var(--line);padding:7px;border-radius:15px;box-shadow:var(--shadow);max-width:530px}.search input{min-width:0;flex:1;border:0;outline:0;padding:9px 10px}.hero-art{min-height:260px;display:flex;align-items:center;justify-content:center;position:relative}.book-stack{display:flex;gap:12px;align-items:center;transform:rotate(-4deg)}.cover{width:125px;height:180px;border-radius:8px 13px 13px 8px;box-shadow:0 18px 35px #102a5626;padding:15px;color:#fff;display:flex;flex-direction:column;justify-content:space-between;border-left:5px solid #ffffff40}.cover strong{font-size:1.05rem;line-height:1.1}.cover small{font-size:.68rem;opacity:.9}.c1{background:linear-gradient(150deg,#16356d,#3479ed)}.c2{background:linear-gradient(150deg,#0c776f,#4db8a9);transform:translateY(-22px)}.c3{background:linear-gradient(150deg,#5737a4,#a08cf0);transform:translateY(12px)}.section{padding:35px 0}.section-head{display:flex;align-items:end;justify-content:space-between;gap:15px;margin-bottom:18px}.section h2{margin:0;color:var(--navy);font-size:1.65rem;letter-spacing:-.04em}.section-head p{margin:7px 0 0;color:var(--muted)}.pill{border:1px solid var(--line);background:#fff;color:var(--navy);border-radius:999px;padding:8px 12px;font-weight:700;font-size:.83rem}.grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:18px}.book{background:#fff;border:1px solid var(--line);border-radius:18px;padding:14px;box-shadow:0 5px 20px #102a5607;display:flex;flex-direction:column;min-width:0}.book-cover{height:190px;border-radius:12px;padding:18px;color:#fff;display:flex;flex-direction:column;justify-content:space-between;overflow:hidden;position:relative}.book-cover:after{content:"";position:absolute;width:130px;height:130px;border:1px solid #ffffff38;border-radius:50%;right:-30px;bottom:-40px;box-shadow:0 0 0 15px #ffffff0a,0 0 0 30px #ffffff08}.book-cover b{font-size:1.25rem;line-height:1.1;max-width:180px;z-index:1}.book-cover small{z-index:1;opacity:.9}.cover-python{background:linear-gradient(145deg,#143b77,#4c8cf6)}.cover-interview{background:linear-gradient(145deg,#075b60,#2cb4a5)}.cover-study{background:linear-gradient(145deg,#492b88,#9673e8)}.book h3{margin:14px 0 6px;font-size:1.05rem;color:var(--navy)}.book p{margin:0 0 12px;color:var(--muted);font-size:.9rem;line-height:1.5;flex:1}.meta{display:flex;justify-content:space-between;align-items:center;gap:8px;margin:5px 0 12px}.price{font-size:1.15rem;font-weight:850;color:var(--navy)}.actions{display:flex;gap:8px}.secondary{border:1px solid var(--line);background:#fff;color:var(--navy);border-radius:11px;padding:10px 12px;font-weight:750;flex:1}.actions .primary{flex:1;padding:10px 12px}.note{background:#fff;border:1px solid var(--line);border-radius:16px;padding:17px;color:var(--muted);line-height:1.65;font-size:.9rem}.note strong{color:var(--navy)}footer{border-top:1px solid var(--line);padding:25px 0;color:var(--muted);font-size:.88rem}.foot{display:flex;justify-content:space-between;gap:15px;flex-wrap:wrap}.modal{position:fixed;inset:0;background:#09162cb3;display:none;align-items:center;justify-content:center;padding:18px;z-index:20}.modal.show{display:flex}.dialog{background:#fff;border-radius:20px;max-width:520px;width:100%;padding:22px;box-shadow:0 25px 80px #0003;max-height:85vh;overflow:auto}.dialog-top{display:flex;align-items:start;justify-content:space-between;gap:15px}.dialog h2{margin:0;color:var(--navy)}.close{border:0;background:#eef2f8;border-radius:9px;width:36px;height:36px;font-size:1.2rem}.dialog p{color:var(--muted);line-height:1.65}.sample{background:#f4f7fc;border:1px solid var(--line);padding:15px;border-radius:12px;line-height:1.7}.empty{padding:30px;text-align:center;color:var(--muted);background:#fff;border:1px dashed #cdd7e6;border-radius:15px;grid-column:1/-1}
+@media(max-width:720px){.hero{padding:35px 0 25px}.hero-grid{grid-template-columns:1fr}.hero-art{min-height:180px}.cover{width:95px;height:140px}.grid{grid-template-columns:repeat(2,minmax(0,1fr));gap:12px}.book{padding:10px}.book-cover{height:155px;padding:13px}.book-cover b{font-size:1.05rem}.section{padding:27px 0}.section-head{align-items:start;flex-direction:column}.nav{min-height:62px}.brand{font-size:1.1rem}.navlink{display:none}}
+@media(max-width:390px){.grid{grid-template-columns:1fr}.book-cover{height:190px}.actions{flex-wrap:wrap}}
+</style>
+</head>
+<body>
+<header>
+  <div class="wrap nav">
+    <div class="brand"><span class="logo">B</span> BookNest</div>
+    <div class="navright"><button class="navlink" onclick="scrollToBooks()">Explore books</button><button class="cartbtn" onclick="openCart()">My basket <span id="cartCount">0</span></button></div>
+  </div>
+</header>
+<main>
+<section class="hero">
+  <div class="wrap hero-grid">
+    <div>
+      <span class="eyebrow">✦ YOUR NEXT CHAPTER STARTS HERE</span>
+      <h1>Ideas worth<br><span>keeping.</span></h1>
+      <p>Discover practical digital books for learning, creating, and growing. Preview a book, find your next topic, and build your personal reading shelf.</p>
+      <div class="search"><input id="searchInput" aria-label="Search books" placeholder="Search programming, study skills..." oninput="renderBooks()"><button class="primary" onclick="scrollToBooks()">Search</button></div>
+    </div>
+    <div class="hero-art" aria-label="Illustration of digital book covers">
+      <div class="book-stack"><div class="cover c1"><small>BOOKNEST LEARNING</small><strong>Python<br>Made Easy</strong><small>BEGINNER GUIDE</small></div><div class="cover c2"><small>CAREER TOOLKIT</small><strong>Interview<br>Ready</strong><small>CS EDITION</small></div><div class="cover c3"><small>STUDENT LIFE</small><strong>Study<br>Smarter</strong><small>FIELD GUIDE</small></div></div>
+    </div>
+  </div>
+</section>
+<section class="section" id="books">
+  <div class="wrap">
+    <div class="section-head"><div><h2>Explore the library</h2><p>Small guides. Useful ideas. Read at your own pace.</p></div><span class="pill">Digital editions</span></div>
+    <div class="grid" id="bookGrid"></div>
+  </div>
+</section>
+<section class="section" style="padding-top:0">
+  <div class="wrap"><div class="note"><strong>Welcome to the BookNest preview.</strong> This first version is a free storefront prototype. The displayed titles, prices, and descriptions are examples. Replace them with your own finished books before publishing. The basket and preview work locally, but this prototype does not collect payments, create accounts, or deliver paid files.</div></div>
+</section>
+</main>
+<footer><div class="wrap foot"><span>© <span id="year"></span> BookNest</span><span>Read more. Learn more. Grow more.</span></div></footer>
+
+<div class="modal" id="modal" role="dialog" aria-modal="true" aria-labelledby="modalTitle" onclick="if(event.target===this)closeModal()">
+  <div class="dialog"><div class="dialog-top"><h2 id="modalTitle">Book details</h2><button class="close" onclick="closeModal()" aria-label="Close">×</button></div><div id="modalBody"></div></div>
+</div>
+<script>
+const books = [
+ {id:"python",title:"Python Made Easy",author:"BookNest Studio",category:"Programming",price:99,cls:"cover-python",cover:"Python<br>Made Easy",description:"A beginner-friendly guide to Python fundamentals, with clear explanations and small practice exercises.",sample:"Welcome to Python Made Easy. This guide is designed to help you learn one concept at a time. Start with variables: a variable is a name that refers to a value. Example: name = 'Maya'. Next, practise printing a message and changing the value. The complete edition should include original lessons, tested examples, exercises, and answers."},
+ {id:"interview",title:"Computer Science Interview Prep",author:"BookNest Studio",category:"Career",price:149,cls:"cover-interview",cover:"Interview<br>Ready",description:"A structured revision guide for programming basics, DBMS, operating systems, and interview practice.",sample:"A good technical interview answer is clear, structured, and supported by an example. For each topic in your finished guide, include a short definition, why it matters, a practical example, and a common follow-up question. Verify every technical answer before publishing."},
+ {id:"study",title:"Study Smarter",author:"BookNest Studio",category:"Student Skills",price:79,cls:"cover-study",cover:"Study<br>Smarter",description:"A practical student guide to planning, revision, focus, and building consistent study habits.",sample:"Begin by choosing one realistic outcome for each study session. Break a large task into small steps, schedule short review sessions, and test your understanding without looking at your notes. Adapt the plan to your own course and deadlines."}
+];
+let basket = [];
+function renderBooks(){
+ const q=(document.getElementById("searchInput").value||"").toLowerCase().trim();
+ const filtered=books.filter(b=>(b.title+" "+b.category+" "+b.description).toLowerCase().includes(q));
+ const grid=document.getElementById("bookGrid");
+ if(!filtered.length){grid.innerHTML='<div class="empty">No books match that search yet. Try another keyword.</div>';return;}
+ grid.innerHTML=filtered.map(b=>`<article class="book"><div class="book-cover ${b.cls}"><small>${b.category.toUpperCase()}</small><b>${b.cover}</b><small>BOOKNEST DIGITAL EDITION</small></div><h3>${b.title}</h3><p>${b.description}</p><div class="meta"><span class="price">₹${b.price}</span><span class="pill">PDF / EPUB</span></div><div class="actions"><button class="secondary" onclick="previewBook('${b.id}')">Read sample</button><button class="primary" onclick="addToBasket('${b.id}')">Add</button></div></article>`).join("");
+}
+function scrollToBooks(){document.getElementById("books").scrollIntoView({behavior:"smooth"});}
+function openModal(title,body){document.getElementById("modalTitle").textContent=title;document.getElementById("modalBody").innerHTML=body;document.getElementById("modal").classList.add("show");}
+function closeModal(){document.getElementById("modal").classList.remove("show");}
+function previewBook(id){const b=books.find(x=>x.id===id);openModal(b.title,`<p><strong>By ${b.author}</strong> · ${b.category}</p><div class="sample">${b.sample}</div><p><strong>Sample preview only.</strong> Replace this with a preview from your completed original eBook.</p><button class="primary" onclick="closeModal();addToBasket('${b.id}')">Add to basket — ₹${b.price}</button>`);}
+function addToBasket(id){if(!basket.includes(id))basket.push(id);document.getElementById("cartCount").textContent=basket.length;openCart();}
+function openCart(){if(!basket.length){openModal("Your basket",'<p>Your basket is empty. Explore the library and add a book you like.</p><button class="primary" onclick="closeModal();scrollToBooks()">Explore books</button>');return;}
+ const chosen=books.filter(b=>basket.includes(b.id));const total=chosen.reduce((s,b)=>s+b.price,0);
+ openModal("Your basket",`<div>${chosen.map(b=>`<p><strong>${b.title}</strong><br>₹${b.price} <button class="secondary" style="float:right;flex:0;padding:6px 10px" onclick="removeFromBasket('${b.id}')">Remove</button></p>`).join("")}</div><hr><p><strong>Total: ₹${total}</strong></p><p>This demo does not process payments. Add a real payment provider and server-side order verification before selling.</p><button class="primary" onclick="closeModal()">Continue browsing</button>`);
+}
+function removeFromBasket(id){basket=basket.filter(x=>x!==id);document.getElementById("cartCount").textContent=basket.length;openCart();}
+document.getElementById("year").textContent=new Date().getFullYear();
+renderBooks();
+</script>
+</body>
+</html>
